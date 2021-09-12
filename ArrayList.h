@@ -1,3 +1,5 @@
+#ifndef ARRAYLIST
+#define ARRAYLIST
 #include <stdlib.h>
 
 typedef struct ArrayList {
@@ -18,3 +20,5 @@ void* removeAt(ArrayList* al, int index);
 void removeElement(ArrayList* al, void* obj);
 void set(ArrayList* al, int index, void* obj);
 int size(ArrayList* al);
+
+#endif

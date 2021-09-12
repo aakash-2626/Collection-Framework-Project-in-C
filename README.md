@@ -204,7 +204,7 @@ If the stack is empty, returns **NULL**.
 This method returns the element at the top in the given stack.  
 If the stack is empty, returns **NULL**.
 
-* **int size(Stack\* stk)**  
+* **int sizeOfStack(Stack\* stk)**  
 This method returns the size of the given stack.
 
 * **int search(Stack\* stk, void\* obj)**  

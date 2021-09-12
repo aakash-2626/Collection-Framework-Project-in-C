@@ -2,7 +2,7 @@
 
 // pushes the object at the top of the stack
 void push(Stack* stk, void* obj) {
-    StackNode* nd = (Node*) malloc(sizeof(Node));
+    StackNode* nd = (StackNode*) malloc(sizeof(StackNode));
     nd->obj = obj;
     nd->next = NULL;
     

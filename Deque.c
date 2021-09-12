@@ -2,7 +2,7 @@
 
 // adds the element at the end of the deque
 void addInDeque(Deque* deque, void* obj) {
-    DequeNode* nd = (Node*) malloc(sizeof(Node));
+    DequeNode* nd = (DequeNode*) malloc(sizeof(DequeNode));
     nd->obj = obj;
     nd->next = NULL;
     nd->prev = NULL;
@@ -20,7 +20,7 @@ void addInDeque(Deque* deque, void* obj) {
 
 // adds the element at the starting of the deque
 void addFirstDeque(Deque* deque, void* obj) {
-    DequeNode* nd = (Node*) malloc(sizeof(Node));
+    DequeNode* nd = (DequeNode*) malloc(sizeof(DequeNode));
     nd->obj = obj;
     nd->next = NULL;
     nd->prev = NULL;
