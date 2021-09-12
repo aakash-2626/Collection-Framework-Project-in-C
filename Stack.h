@@ -1,12 +1,12 @@
 #include <stdlib.h>
 
-typedef struct Node {
-   struct Node* next;
+typedef struct StackNode {
+   struct StackNode* next;
    void* obj;
-} Node;
+} StackNode;
 
 typedef struct Stack {
-    Node* head;
+    StackNode* head;
     int size;
 } Stack;
 
@@ -14,5 +14,5 @@ void push(Stack* stk, void* obj);
 int empty(Stack* stk);
 void* pop(Stack* stk);
 void* peek(Stack* stk);
-int size(Stack* stk);
+int sizeOfStack(Stack* stk);
 int search(Stack* stk, void* obj);

@@ -2,7 +2,7 @@
 
 // pushes the object at the top of the stack
 void push(Stack* stk, void* obj) {
-    Node* nd = (Node*) malloc(sizeof(Node));
+    StackNode* nd = (Node*) malloc(sizeof(Node));
     nd->obj = obj;
     nd->next = NULL;
     
@@ -44,13 +44,13 @@ void* peek(Stack* stk) {
 }
 
 // returns the size of the stack
-int size(Stack* stk) {
+int sizeOfStack(Stack* stk) {
     return stk->size;
 }
 
 // returns the offset of the latest occurence of the object in the stack
 int search(Stack* stk, void* obj) {
-    Node* temp = stk->head;
+    StackNode* temp = stk->head;
     int offset = 1;
     
     while(temp != NULL) {

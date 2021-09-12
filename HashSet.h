@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include "ArrayList.h"
 
 typedef struct SetNode {
     void* obj;
@@ -13,8 +12,8 @@ typedef struct {
 } HashSet;
 
 void initSet(HashSet* hset);
-int getBucketIndex(HashSet* hset, void* obj);
-void rehash(HashSet* hset);
+int getBucketIndexInSet(HashSet* hset, void* obj);
+void rehashSet(HashSet* hset);
 int addInSet(HashSet* hset, void* obj);
 void clearSet(HashSet* hset);
 int setContains(HashSet* hset, void* obj);

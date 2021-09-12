@@ -2,7 +2,7 @@
 
 // adds the element at the end of the deque
 void addInDeque(Deque* deque, void* obj) {
-    Node* nd = (Node*) malloc(sizeof(Node));
+    DequeNode* nd = (Node*) malloc(sizeof(Node));
     nd->obj = obj;
     nd->next = NULL;
     nd->prev = NULL;
@@ -20,7 +20,7 @@ void addInDeque(Deque* deque, void* obj) {
 
 // adds the element at the starting of the deque
 void addFirstDeque(Deque* deque, void* obj) {
-    Node* nd = (Node*) malloc(sizeof(Node));
+    DequeNode* nd = (Node*) malloc(sizeof(Node));
     nd->obj = obj;
     nd->next = NULL;
     nd->prev = NULL;
@@ -49,7 +49,7 @@ void clearDeque(Deque* deque) {
 
 // checks if the element is present in the deque or not
 int containsDeque(Deque* deque, void* obj) {
-    Node* temp = deque->head;
+    DequeNode* temp = deque->head;
 
     while(temp != NULL) {
         if(temp->obj == obj) {

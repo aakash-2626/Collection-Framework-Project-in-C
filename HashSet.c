@@ -12,7 +12,7 @@ void initSet(HashSet* hset) {
 }
 
 // returns the index of the bucket in which the element might be present
-int getBucketIndex(HashSet* hset, void* obj) {
+int getBucketIndexInSet(HashSet* hset, void* obj) {
     long p = (long) (&obj);
     if(p < 0) {
         p *= -1;
@@ -49,7 +49,7 @@ int addInSet(HashSet* hset, void* obj) {
         initSet(hset);
     }
 
-    int bucketIndex = getBucketIndex(hset, obj);
+    int bucketIndex = getBucketIndexInSet(hset, obj);
     SetNode* temp = get(hset->buckets, bucketIndex);
     while(temp != NULL) {
         if(temp->obj == obj) {
@@ -68,7 +68,7 @@ int addInSet(HashSet* hset, void* obj) {
 
     double loadFactor = (1.0 * hset->numEntries) / hset->numBuckets;
     if(loadFactor > 0.75) {
-        rehash(hset);
+        rehashSet(hset);
     }
     return 1;
 }
@@ -81,7 +81,7 @@ void clearSet(HashSet* hset) {
 
 // checks if the element is present in set or not
 int setContains(HashSet* hset, void* obj) {
-    int bucketIndex = getBucketIndex(hset, obj);
+    int bucketIndex = getBucketIndexInSet(hset, obj);
     SetNode* temp = get(hset->buckets, bucketIndex);
     while(temp != NULL) {
         if(temp->obj == obj) {
@@ -101,7 +101,7 @@ int isSetEmpty(HashSet* hset) {
 
 // removes the element from the set
 int removeFromSet(HashSet* hset, void* obj) {
-    int bucketIndex = getBucketIndex(hset, obj);
+    int bucketIndex = getBucketIndexInSet(hset, obj);
     SetNode* temp = get(hset->buckets, bucketIndex);
     SetNode* prev = NULL;
 

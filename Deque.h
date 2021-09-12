@@ -1,14 +1,14 @@
 #include <stdlib.h>
 
-typedef struct Node {
-   struct Node* next;
-   struct Node* prev;
+typedef struct DequeNode {
+   struct DequeNode* next;
+   struct DequeNode* prev;
    void* obj;
-} Node;
+} DequeNode;
 
 typedef struct Deque {
-    Node* head;
-    Node* tail;
+    DequeNode* head;
+    DequeNode* tail;
     int size;
 } Deque;
 
